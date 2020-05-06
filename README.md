@@ -1,21 +1,43 @@
-# README
+# The Gossip Project, the project of the year 
 
-Hello,
+How to install it?
 
-Voici l'architecture de l'exercice :
-* config/routes.rb : crée tous les liens possibles consultables. On pourra repérer les controller#actions qui sont importants.
-* app/controllers : on retrouvera tous les contrôleurs
-> 1. Contact : contrôle l'affichage de la page de contact de The Gossip Project
-> 2. Gossip : contrôle l'affichage des potins (récupère le numéro du gossip à afficher)
-> 3. Team : contrôle l'affichage de la team de The Gossip Project
-> 4. User : Montre l'utilisateur (récupère le numéro de l'utilisateur à afficher)
-> 5. Welcome : Gère la page d'accueil + la page 'Bienvenue' à untel quand on tape une url comme 'http://localhost:3000/welcome/untel'
-* views : Un dossier par contrôleur puis un fichier par méthode.
-> 1. contact/index : view de la page de contact de The Gossip Project
-> 2. gossip/show : view de la page d'un potin donné
-> 3. team/index : view de la page de la team de The Gossip Project
-> 4. user/show : view d'un utilisateur donné et de ses informations personnelles
-> 5. welcome/index : view de la page d'accueil avec tous les potins
-> 6. welcome/show : view de la page 'Bienvenue' à untel quand on tape une url comme 'http://localhost:3000/welcome/untel'
+```
+$ bundle install
 
-Pour lancer le programme, il faudra lancer faire un 'bundle install' dans le dossier the-gossip-project- puis un 'rails db:create' ainsi qu'un 'rails db:migrate'. Enfin on pourra lancer le serveur avec 'rails server'
+$ rails db:create
+
+$ rails db:migrate
+
+$ rails db:seed
+```
+
+How to use it?
+
+Aller  : http://localhost:3000/
+
+What we can do here:
+
+    Create a user account
+    Login as a registered user
+    Check the last gossips
+    See the creators
+    Contact them (maybe)
+    Create a new gossip
+    
+
+Here's the global key concepts we are using here :
+* config/routes.rb : create all possibles urls. 
+* app/controllers : where we can find all our controllers
+> 1. Contact : manage the contact page display
+> 2. Gossip : manage the contact page display (find the gossip id to display)
+> 3. Team : manage the team page display
+> 4. User : Show the selected user (and find the user id to display)
+> 5. Welcome : manage the homepage display + the Welcome page for someone if we type 'http://localhost:3000/welcome/someone/'
+* views : One folder per controller plus one file per function. 
+> 1. contact/index : displayed content for the contact page
+> 2. gossip/show :  displayed content for a specific gossip
+> 3. team/index : displayed content for the team page
+> 4. user/show : displayed content for the user page
+> 5. welcome/index : displayed content for the homepage with all the gossips
+> 6. welcome/show : customized welcome page for someone, go to 'http://localhost:3000/welcome/untel'
