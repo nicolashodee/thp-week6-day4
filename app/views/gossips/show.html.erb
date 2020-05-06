@@ -1,0 +1,27 @@
+
+<!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(http://4.bp.blogspot.com/-qy4-fXEZ8CM/Te_BRR-QTEI/AAAAAAAAIBw/1L3y8aSgA7M/s1600/hopper+%25282%2529.jpg); background-size: cover; background-position-y: 35%; background-repeat: no-repeat;">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+      <!-- Content -->
+      <h2 class="card-title h2 my-4 py-2">Je te présente le gossip numéro <%= @gossip_index %></h2>
+      
+
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+
+
+
+
+<p class="lead ml-3">
+  Son titre :<span class="text-monospace ml-3"><%= Gossip.all[@gossip_index - 1].title %></span>.<br />
+  Son contenu :<span class="text-monospace ml-3"><%= Gossip.all[@gossip_index - 1].content %></span><br />
+  Sa date de création :<span class="text-monospace ml-3"><%= Gossip.all[@gossip_index - 1].created_at %></span>
+</p>
+
+<p class="lead ml-3">
+  Voici son auteur :<span class="text-monospace ml-3"><%= Gossip.all[@gossip_index - 1].user.first_name %> <%= Gossip.all[@gossip_index - 1].user.last_name %></span>.
+  Vous pouvez consulter son profil avec ce <%= link_to "lien", user_path(Gossip.all[@gossip_index - 1].user.id) %>.
+</p>

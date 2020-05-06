@@ -1,0 +1,31 @@
+
+<!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(http://getwallpapers.com/wallpaper/full/c/0/d/944031-mona-lisa-wallpaper-1920x1080-for-iphone-5s.jpg); background-size: cover; background-position-y: 35%; background-repeat: no-repeat;">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+      <!-- Content -->
+      <h2 class="card-title h2 my-4 py-2">Voici la page de lutilisateur <%= @user_id %></h2>
+      
+
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+<h2 class="text-monospace ml-3 my-4"><%= User.all.find(@user_id).first_name %> <%= User.all.find(@user_id).last_name %></h2>
+
+<p class="lead ml-3">
+  Sa description :<span class="text-monospace ml-3"><%= User.all.find(@user_id).description %></span>
+</p>
+
+<p class="lead ml-3">
+  Son âge :<span class="text-monospace ml-3"><%= User.all.find(@user_id).age %></span><br />
+  Son email :<span class="text-monospace ml-3"><%= User.all.find(@user_id).email %></span><br />
+  Sa ville :<span class="text-monospace ml-3"><%= User.all.find(@user_id).city.name %></span>
+</p>
+
+<p class="lead ml-3 my-4">
+  Ses potins :<br />
+  <% User.all.find(@user_id).gossips.each do |gossip| %>
+    - <span class="text-monospace ml-3"><%= gossip.title %></span> :<span class="text-monospace ml-3"><%= gossip.content %></span><br />
+  <% end %>
+</p>
